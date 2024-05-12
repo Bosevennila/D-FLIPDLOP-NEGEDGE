@@ -49,7 +49,15 @@ Program for flipflops and verify its truth table in quartus using Verilog progra
 Developed by: CHANDRAPRIYADHARSHINI C
 RegisterNumber: 212223240019
 */
-
+module DFLIPFLOPNEGEDGE(D,Clock,reset,Q);
+input D,reset,Clock;
+output reg Q;
+always @ (negedge Clock)
+if(!reset)
+Q <= 0;
+else
+Q <= D;
+endmodule
 ```
 **RTL LOGIC FOR FLIPFLOPS**
 
